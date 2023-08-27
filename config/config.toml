@@ -1,0 +1,16 @@
+# 数据库配置
+[mysql]
+host = "127.0.0.1"
+port = 3306
+database = "douyin"
+username = "root"
+password = "root1234"
+charset = "utf8mb4"
+parse_time = true
+loc = "Local"
+
+#记录当前服务器的ip和启动端口号，当前服务器的ip用于生成对应的视频链接地址
+[server]
+ip = "127.0.0.1"
+port = 8080
+
