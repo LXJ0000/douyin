@@ -38,10 +38,7 @@ func (u *UserLoginDAO) QueryUserLogin(username, password string, login *UserLogi
 }
 
 func (u *UserLoginDAO) IsUserExistByUsername(username string) bool {
-	var userLogin UserLogin
-	DB.Where("username=?", username).First(&userLogin)
-	if userLogin.Id == 0 {
-		return false
-	}
-	return true
+	var count int64
+	DB.Model(&UserLogin{}).Where("username=?", username).Count(&count)
+	return count > 0
 }
