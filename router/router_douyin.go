@@ -3,6 +3,7 @@ package router
 import (
 	"douyin/controller/user_info"
 	"douyin/controller/user_login"
+	"douyin/controller/video"
 	middleware "douyin/middlewares"
 	"douyin/models"
 	"github.com/gin-gonic/gin"
@@ -32,6 +33,7 @@ func InitDouyinRouter() *gin.Engine {
 	baseGroup.POST("/user/login/", middleware.SHAMiddleWare(), user_login.UserLoginHandler)
 	//注册
 	baseGroup.POST("/user/register/", middleware.SHAMiddleWare(), user_login.UserRegisterHandler)
-
+	//视频投稿
+	baseGroup.POST("/publish/action/", middleware.JWTMiddleWare(), video.PublishVideoHandler)
 	return r
 }

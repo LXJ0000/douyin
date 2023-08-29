@@ -21,11 +21,19 @@ type Mysql struct {
 type Server struct {
 	IP   string
 	Port int
+	URL  string
 }
 
 type Config struct {
 	DB     Mysql `toml:"mysql"`
 	Server `toml:"server"`
+	Path   `toml:"path"`
+}
+
+// Path ffmpeg_path和static_path
+type Path struct {
+	FfmpegPath       string `toml:"ffmpeg_path"`
+	StaticSourcePath string `toml:"static_source_path"`
 }
 
 var Info Config
