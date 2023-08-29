@@ -4,6 +4,7 @@ import (
 	middleware "douyin/middlewares"
 	"douyin/models"
 	"errors"
+	"log"
 )
 
 type QueryUserLoginFlow struct {
@@ -24,6 +25,18 @@ func NewQueryUserLoginFlow(username, password string) *QueryUserLoginFlow {
 
 func (q *QueryUserLoginFlow) Do() (*models.LoginResponse, error) {
 
+	//对参数进行合法性验证
+	if err := q.checkNum(); err != nil {
+		return nil, err
+	}
+	//准备好数据
+	if err := q.prepareData(); err != nil {
+		return nil, err
+	}
+	//打包最终数据
+	if err := q.packData(); err != nil {
+		return nil, err
+	}
 	return q.data, nil
 }
 
@@ -60,5 +73,6 @@ func (q *QueryUserLoginFlow) packData() error {
 		UserId: q.userid,
 		Token:  q.token,
 	}
+	log.Println(q.token)
 	return nil
 }

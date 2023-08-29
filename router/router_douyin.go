@@ -35,5 +35,8 @@ func InitDouyinRouter() *gin.Engine {
 	baseGroup.POST("/user/register/", middleware.SHAMiddleWare(), user_login.UserRegisterHandler)
 	//视频投稿
 	baseGroup.POST("/publish/action/", middleware.JWTMiddleWare(), video.PublishVideoHandler)
+	//视频列表
+	baseGroup.GET("/publish/list/", middleware.JWTMiddleWare(), video.QueryVideoListHandler)
+
 	return r
 }
