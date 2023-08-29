@@ -4,11 +4,25 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="f9dc478e-8ba2-44fa-a06d-9fa6d105eb10" name="Changes" comment="Add Post_Video">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/init_db.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/init_db.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/router/router_douyin.go" beforeDir="false" afterPath="$PROJECT_DIR$/router/router_douyin.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/user_login/query_user_login.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/user_login/query_user_login.go" afterDir="false" />
+=======
+    <list default="true" id="f9dc478e-8ba2-44fa-a06d-9fa6d105eb10" name="Changes" comment="Modify models user_login">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/douyin.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/conf.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/conf.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user_info.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_info.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router/router_douyin.go" beforeDir="false" afterPath="$PROJECT_DIR$/router/router_douyin.go" afterDir="false" />
+>>>>>>> origin/main
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,8 +144,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit" />
     <MESSAGE value="Modify models user_login" />
+<<<<<<< HEAD
     <MESSAGE value="Add Post_Video" />
     <option name="LAST_COMMIT_MESSAGE" value="Add Post_Video" />
+=======
+    <option name="LAST_COMMIT_MESSAGE" value="Modify models user_login" />
+>>>>>>> origin/main
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
