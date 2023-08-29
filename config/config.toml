@@ -13,4 +13,9 @@ loc = "Local"
 [server]
 ip = "127.0.0.1"
 port = 8080
+url = "http://127.0.0.1:8000"
+#todo modeify 末尾不要加 ‘/’
 
+[path]
+#todo modify
+static_source_path = "./static"
