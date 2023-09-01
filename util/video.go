@@ -4,12 +4,14 @@ import (
 	"bytes"
 	"douyin/config"
 	"douyin/models"
+	"errors"
 	"fmt"
 	"github.com/disintegration/imaging"
 	ffmpeg "github.com/u2takey/ffmpeg-go"
 	"log"
 	"os"
 	"strings"
+	"time"
 )
 
 func NewFileName(userid int64) string {
@@ -66,4 +68,23 @@ func GetSnapshot(videoPath, snapshotPath string, frameNum int) (snapshotName str
 func GetFileUrl(fileName string) string {
 	base := fmt.Sprintf("%s/static/%s", config.Info.URL, fileName)
 	return base
+}
+
+func FillVideoListField(userId int64, videos *[]*models.Video) (*time.Time, error) {
+	size := len(*videos)
+	if videos == nil || size == 0 {
+		return nil, errors.New("videos is null")
+	}
+	dao := models.NewUserInfoDAO()
+	latestTime := (*videos)[size-1].CreatedAt
+	for i := 0; i < size; i++ {
+		var userinfo models.UserInfo
+		if err := dao.QueryUserInfoById((*videos)[i].UserInfoId, &userinfo); err != nil {
+			continue
+		}
+		//	点赞？
+		(*videos)[i].Author = userinfo
+		//	todo
+	}
+	return &latestTime, nil
 }

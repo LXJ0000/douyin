@@ -27,6 +27,8 @@ func InitDouyinRouter() *gin.Engine {
 	//设置统一入口
 	baseGroup := r.Group("/douyin")
 
+	baseGroup.GET("/feed/", video.FeedVideoListHandler)
+
 	//用户信息
 	baseGroup.GET("/user/", middleware.JWTMiddleWare(), user_info.UserInfoHandler)
 	//登录
